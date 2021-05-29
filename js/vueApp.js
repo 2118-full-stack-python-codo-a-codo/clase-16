@@ -39,3 +39,44 @@ let myComponent = new Vue(
         }
     }
 );
+
+const router = () => {
+    const path = parseLocation();
+
+    const {action = 'error' } = findActionByPath(path, routes) || {};
+
+    // Antes de cambiar de route, limpio la vista
+    //app.cleanView();
+
+    switch (action) {
+        case "contact":
+            alert("ahora mostraria un Vue component de contacto");
+            break;
+        case "agregar":
+            //app.agregar("#app") // falta definir metodo agregar
+            break;
+        case "listar":
+            //app.listar("#app") // falta definir metodo list
+            break;
+        case "buscar":
+            //app.buscar("#app")
+        break;
+        case "favorito":
+            //FavouriteComponent("#app");
+        break;
+        default:
+            //ErrorComponent("#app");
+            break;
+    }
+}
+
+//$( window ).on( 'load', () => {
+    router();
+//});
+
+//document.readyState()
+
+window.addEventListener("hashchange",() =>{
+    router();
+} )
+//$( window ).on('hashchange', )

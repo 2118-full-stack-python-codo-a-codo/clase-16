@@ -31,3 +31,4 @@ for (let index = 0; index < citiesFrom.length; index++) {
         console.log("Encontre Miami");
     }
 }
+
